@@ -1,0 +1,391 @@
+:root {
+  --bg: #f3efe6;
+  --bg-accent: #e7f0ea;
+  --surface: #fffdf8;
+  --ink: #1f2a24;
+  --muted: #5d6b63;
+  --line: #d5ddd6;
+  --primary: #0f6b4c;
+  --primary-soft: #d8efe4;
+  --danger: #a33b2d;
+  --success: #2f6b3a;
+  --shadow: 0 10px 30px rgba(31, 42, 36, 0.08);
+  --radius: 16px;
+  font-family: "Source Sans 3", "Noto Sans SC", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, #dceee4 0, transparent 35%),
+    linear-gradient(180deg, #f7f3eb 0%, #eef4f0 100%);
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-family: "Fraunces", "Noto Serif SC", Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.brand-mark {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: white;
+  font-size: 1.4rem;
+  font-family: "Noto Serif SC", serif;
+}
+
+.brand p,
+.muted {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.nav-link {
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  color: var(--ink);
+  background: transparent;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.main,
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.page.narrow {
+  max-width: 720px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.panel,
+.stat-card,
+.item-row,
+.empty-state {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.panel,
+.empty-state {
+  padding: 1.25rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.9rem;
+}
+
+.stat-card {
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stat-card strong {
+  font-size: 1.8rem;
+}
+
+.filters,
+.inline-controls,
+.row-actions,
+.rating-row,
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.filters input,
+.filters select,
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.filters > * {
+  flex: 1 1 140px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.btn.danger {
+  background: #f8e8e5;
+  border-color: #e3b7af;
+  color: var(--danger);
+}
+
+.btn.success {
+  background: #e5f3e8;
+  border-color: #b9d8bf;
+  color: var(--success);
+}
+
+.btn.ghost {
+  background: transparent;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.item-row {
+  padding: 1rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.item-meta,
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.badge,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--bg-accent);
+  font-size: 0.85rem;
+}
+
+.badge.ghost {
+  background: #efece4;
+}
+
+.hanzi {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0.4rem 0 0.8rem;
+}
+
+.flashcard {
+  text-align: center;
+  padding: 2rem 1.25rem;
+}
+
+.answer {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.rating-row {
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+}
+
+.hint.error {
+  color: var(--danger);
+}
+
+.hint.success {
+  color: var(--success);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.45rem;
+  min-height: 160px;
+  overflow-x: auto;
+  padding-top: 1rem;
+}
+
+.chart-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 34px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.chart-bar {
+  width: 18px;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(180deg, #1a8a62, #0f6b4c);
+  min-height: 4px;
+}
+
+.preview-audio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 0.85rem;
+  }
+
+  .item-row,
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .row-actions {
+    width: 100%;
+  }
+
+  .row-actions .btn,
+  .row-actions a {
+    flex: 1;
+    text-align: center;
+  }
+}
